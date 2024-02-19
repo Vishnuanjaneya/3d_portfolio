@@ -6,9 +6,7 @@ import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
-//IDcKyftBbVzKswPfL
-//template_y2phtqi
-//service_riwxvg3
+
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -32,11 +30,10 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-
     emailjs
       .send(
-        'service_riwxvg3',
-        'template_y2phtqi',
+        'your_emailjs_service_id',
+        'your_emailjs_template_id',
         {
           from_name: form.name,
           to_name: "Vishnu",
@@ -44,7 +41,7 @@ const Contact = () => {
           to_email: "vishnuanjaneya9801@gmail.com",
           message: form.message,
         },
-        'IDcKyftBbVzKswPfL'
+        'your_emailjs_publickey'
       )
       .then(
         () => {
